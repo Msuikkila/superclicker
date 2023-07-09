@@ -1,11 +1,12 @@
 let doubled: boolean = false;
 let counter: number = 0;
+const price = 10
 
 function incrementCounter(upgradeButton: HTMLButtonElement) {
   const increment = doubled ? 2 : 1;
   counter = counter + increment;
 
-  if (counter >= 5 && doubled === false) {
+  if (counter >= price && doubled === false) {
     // enable double clicker
     upgradeButton.disabled = false
   }
@@ -13,11 +14,13 @@ function incrementCounter(upgradeButton: HTMLButtonElement) {
 
 function updateCounter(counterButton: HTMLButtonElement) {
   counterButton.innerHTML = `Count is ${counter}`
+ 
 }
 
 
 export function setupCounter(counterButton: HTMLButtonElement, upgradeButton: HTMLButtonElement) {
   updateCounter(counterButton)
+  upgradeButton.innerHTML = `2x modifier! cost: ${price}`
 
   counterButton.addEventListener('click', () => {
     incrementCounter(upgradeButton);
@@ -29,11 +32,12 @@ export function setupUpgrade(upgradeButton: HTMLButtonElement, counterButton: HT
   // setting up the upgrade button
   upgradeButton.disabled = true
   
+  
   // setting up what happens when we click it
   upgradeButton.addEventListener('click', () => {
-    if(counter >= 5) {
+    if(counter >= price) {
     doubled = true
-    counter = counter - 5
+    counter = counter - price
     updateCounter(counterButton)
     upgradeButton.disabled = true
     } 

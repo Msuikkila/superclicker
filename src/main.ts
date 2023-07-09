@@ -6,7 +6,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <h1>Superclicker</h1>
     <div class="card">
       <button id="counter" type="button"></button>
-      <button id="upgrade" type="button">2x Clicks (cost 5)</button>
+      <button id="upgrade" type="button"></button>
     </div>
     <p class="docs">
       It's an idle clicker, you know what to do
