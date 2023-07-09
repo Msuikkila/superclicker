@@ -27,7 +27,6 @@ export function setupCounter(counterButton: HTMLButtonElement, upgradeButton: HT
 
 export function setupUpgrade(upgradeButton: HTMLButtonElement, counterButton: HTMLButtonElement) {
   // setting up the upgrade button
-  upgradeButton.innerHTML = "Double clicker!"
   upgradeButton.disabled = true
   
   // setting up what happens when we click it
